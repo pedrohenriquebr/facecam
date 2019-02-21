@@ -1,0 +1,9 @@
+certifi
+numpy
+opencv-python
+Pillow
+python-dotenv
+requests
+scikit-learn
+scipy
+urllib3

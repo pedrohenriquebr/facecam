@@ -1,0 +1,3 @@
+[submodule "web-face-recognition"]
+	path = web-face-recognition
+	url = https://github.com/pedrohenriquebr/web-face-recognition.git
