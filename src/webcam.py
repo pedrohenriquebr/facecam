@@ -81,7 +81,7 @@ class Recognition:
                 # envio a imagem temporária pro servidor de reconhecimento
                 predictions = send_image(TMP_IMG)
                 for person in predictions:
-                    name, (top, right, bottom, left) = person[0], person[1]
+                    name, (top, right, bottom, left) = person['label'], person['location']
 
                     print("encontrei {name} em ({left},{top})".format(
                         name=name, left=left, top=top))
@@ -129,7 +129,7 @@ class Recognition:
 
 
 def send_image(image_path):
-    url = 'http://{RECOGNITION_HOST}:5000/api/recognition'.format(
+    url = 'http://{RECOGNITION_HOST}:5000/api/recognition/svm'.format(
         RECOGNITION_HOST=RECOGNITION_HOST)
     files = {'file': open(image_path, 'rb')}
     r = requests.post(url, files=files)
